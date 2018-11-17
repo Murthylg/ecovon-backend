@@ -1,0 +1,74 @@
+﻿@model Customer
+
+    <div class="col-md-4 col-md-offset-4 p-10">
+       
+            <form method="post" asp-antiforgery="true" class="form-group">
+                <table class="table b_none">
+                    <tr>
+                        <td>
+                            <label asp-for="Name">Customer Name: </label>
+                        </td>
+                        <td>
+                            <input asp-for="Name" />
+                            <span asp-validation-for="Name"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="Email">Email:</label></td>
+                        <td><input asp-for="Email" /></td>
+                        <td><span asp-validation-for="Email"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="PrimaryPhone">Primary Phone Number:</label></td>
+                        <td><input asp-for="PrimaryPhone" /></td>
+                        <td><span asp-validation-for="PrimaryPhone"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="AlternatePhone">Alternative Phone Number:</label></td>
+                        <td><input asp-for="AlternatePhone" /></td>
+                        <td><span asp-validation-for="AlternatePhone"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="Address1">Address1:</label></td>
+                        <td><input asp-for="Address1" /></td>
+                        <td><span asp-validation-for="Address1"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="Address2">Address2:</label></td>
+                        <td><input asp-for="Address2" /></td>
+                        <td><span asp-validation-for="Address2"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="Address3">Address3:</label></td>
+                        <td><input asp-for="Address3" /></td>
+                        <td><span asp-validation-for="Address3"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="City">City:</label></td>
+                        <td><input asp-for="City" /></td>
+                        <td><span asp-validation-for="City"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="State">State:</label></td>
+                        <td><input asp-for="State" /></td>
+                        <td><span asp-validation-for="State"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="Country">Country:</label></td>
+                        <td><input asp-for="Country" /></td>
+                        <td><span asp-validation-for="Country"></span></td>
+                    </tr>
+                    <tr>
+                        <td><label asp-for="Zip">Zipcode:</label></td>
+                        <td><input asp-for="Zip" /></td>
+                        <td><span asp-validation-for="Zip"></span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><input class="btn btn-primary" type="submit" value="Create Customer" /></td>
+                        <td><a class="btn btn-danger" asp-action="Index" asp-controller="Customer">Cancel</a></td>
+                    </tr>
+                </table>
+
+            </form>
+        </div> 

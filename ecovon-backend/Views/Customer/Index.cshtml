@@ -1,0 +1,53 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<Customer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@*<form method="get" class="form-inline">
+    <input name="filter" class="form-control" placeholder="filter"
+           value="@Model.RouteValue["Filter"]" />
+    <button type="submit" class="btn btn-info">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search </button>
+</form>*@
+
+
+@*<nav aria-label="Suppliers navigation example">
+    <vc:pager paging-list="@Model" />
+</nav>*@
+
+ </div>
+
+      
+            <div class="col-md-12">
+           <table class="table table-bordered">
+                    <tr class="active">
+                        <th>@Html.SortableHeaderFor(r => r.Name)</th>
+                        <th>@Html.SortableHeaderFor(r => r.Email)</th>
+                        <th>@Html.SortableHeaderFor(r => r.PrimaryPhone)</th>
+                        <th>@Html.SortableHeaderFor(r => r.AlternatePhone)</th>
+                        <th>@Html.SortableHeaderFor(r => r.Address1)</th>
+                        <th>@Html.SortableHeaderFor(r => r.Address2)</th>
+                        <th>@Html.SortableHeaderFor(r => r.Address3)</th>
+                        <th>@Html.SortableHeaderFor(r => r.City)</th>
+                        <th>@Html.SortableHeaderFor(r => r.State)</th>
+                        <th>@Html.SortableHeaderFor(r => r.Country)</th>
+                        <th>@Html.SortableHeaderFor(r => r.Zip)</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                    @foreach (var prjdetails in Model)
+                    {
+                        @Html.Partial("_Summary", prjdetails);
+                    }
+                </table>
+
+                <nav aria-label="Suppliers navigation example" class="right">
+                    <vc:pager paging-list="@Model" />
+                    @*@await this.Component.InvokeAsync("Pager", new { pagingList = this.Model })*@
+                </nav>
+            </div>
+    @*<nav aria-label="Suppliers navigation example">
+            @Html.Partial("SmallPager", this.Model)
+        </nav>*@
+
+

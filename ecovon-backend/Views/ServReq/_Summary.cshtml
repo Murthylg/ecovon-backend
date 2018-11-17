@@ -1,0 +1,31 @@
+﻿@model ServiceRequest
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<tr>
+    <td>@Model.ServiceRequestId</td>
+    <td>@Model.CustomerId</td>
+    <td>@Model.ServiceTypeId</td>
+    <td>@Model.CreatedDate</td>
+    <td>@Model.CreatedBy</td>
+    <td>@Model.AssignedTo</td>
+    <td>@Model.AssignedBy</td>
+    <td>@Model.AssignedDate</td>
+    <td>@Model.Status</td>
+    <td>@Model.Notes</td> 
+</tr>

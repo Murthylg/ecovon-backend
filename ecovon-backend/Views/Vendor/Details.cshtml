@@ -1,0 +1,106 @@
+﻿@model Vendor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>VendorModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MiddleName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeofWorkId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TypeofWorkId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MobileNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MobileNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WorkNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsEnabled)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsEnabled)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Experience)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Experience)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TeamSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TeamSize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentityType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdentityType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentityNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdentityNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.VendorId">Edit</a> |
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>

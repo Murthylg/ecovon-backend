@@ -1,0 +1,60 @@
+﻿@model RegUsrDetails
+@{
+    ViewData["Title"] = "Index";
+}
+
+   
+        <div class="col-md-12">
+            <a asp-action="Create" asp-controller="RegisterUser" class="btn btn-primary text-uppercase"><i class="fa fa-user-plus"></i> </i>Create User</a>
+            <a asp-action="Index" asp-controller="Customer" class="btn btn-primary  text-uppercase"><i class="fa fa-hand-o-left"></i> Back </a><br/><br/>
+            <table class="table table-bordered ">
+                <tr>
+                    <th>Customer Name</th>
+                    <th>User Role</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Work Phone</th>
+                    <th>Mobile Phone</th>
+                    <th>Home Phone</th>
+                    <th>Address1</th>
+                    <th>Address2</th>
+                    <th>Address3</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Country</th>
+                    <th>ZipCode</th>
+                    <th>User Name</th>
+                    <th>Update</th>
+                </tr>
+                @foreach (var usrdetails in Model.users)
+                {
+                    var login = Model.logins.Where(a => a.UserId.Equals(usrdetails.UserId)).FirstOrDefault();
+                <tr>
+                    <td>@usrdetails.CustomerDetails.Name</td>
+                    <td>@usrdetails.UserRoleDetails.Name</td>
+                    <td>@usrdetails.FirstName</td>
+                    <td>@usrdetails.MiddleName</td>
+                    <td>@usrdetails.LastName</td>
+                    <td>@usrdetails.Email</td>
+                    <td>@usrdetails.WorkPhone</td>
+                    <td>@usrdetails.MobilePhone</td>
+                    <td>@usrdetails.HomePhone</td>
+                    <td>@usrdetails.Address1</td>
+                    <td>@usrdetails.Address2</td>
+                    <td>@usrdetails.Address3</td>
+                    <td>@usrdetails.City</td>
+                    <td>@usrdetails.State</td>
+                    <td>@usrdetails.Country</td>
+                    <td>@usrdetails.Zip</td>
+                    <td>@login.LoginName</td>
+                    <td>                        
+                        <a asp-action="Edit" asp-controller="RegisterUser" class="btn btn-primary" asp-route-id="@usrdetails.UserId">Edit</a>
+                    </td>
+                </tr>
+                }
+            </table>
+         
+
+</div>

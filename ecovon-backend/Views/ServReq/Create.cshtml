@@ -1,0 +1,51 @@
+﻿@model ServReqDetailsForUserModel
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="content">
+    <div class="container-fluid my_board">
+        <div class="col-md-12">
+            <div class="whitebox">
+                <div class="row">
+
+                    <div class="col-md-4 col-md-offset-4">
+                        <form method="post" asp-antiforgery="true" enctype="multipart/form-data">
+                            <div>
+                                <label asp-for="CurrentStatus"> Current Status: </label>
+                                <input asp-for="CurrentStatus" class="form-control" />
+                                <span asp-validation-for="CurrentStatus"></span>
+                            </div>
+                            <div>
+                                <label asp-for="AssignedTo"> Assigned To: </label>
+                                @*<select asp-for="TypeofWorkId" asp-items="(SelectList)ViewBag.TypeOfWorkName" class="form-control"><option value="">-- Choose User Role --</option></select>*@
+                                <select asp-for="AssignedTo" asp-items="(SelectList)ViewBag.TechnicianDetails" class="form-control"><option value="">-- Select Technician --</option></select>
+                                <span asp-validation-for="AssignedTo"></span>
+                            </div>
+                            <div>
+                                <label asp-for="Notes"> Notes: </label>
+                                <input asp-for="Notes" class="form-control" />
+                                <span asp-validation-for="Notes"></span>
+                            </div>
+                            <br />
+                            <div>
+                                <input class="btn btn-primary" type="submit" value="Create User" />
+                                <a class="btn btn-primary" asp-action="Index" asp-controller="ServReq">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                @*<table class="table table-bordered" style="width: 50%">
+                    <tr style="background-color: #72a540;color: white;"> <th>Service Request Details</th><th></th></tr>                    
+                        <tr>
+                            <td>@Model.ServiceRequestId</td>
+                            <td>@Model.CreatedDate</td>
+                            <td>@Model.CreatedBy</td>
+                            <td>@Model.AssignedTo</td>
+                            <td>@Model.Status</td>
+                            <td>@Model.Notes</td>
+                        </tr>
+                </table>*@                
+            </div>
+        </div>
+    </div>
+</div>

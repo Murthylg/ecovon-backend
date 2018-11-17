@@ -1,0 +1,114 @@
+﻿@*@model IEnumerable<ServReqDetailsForUserModel>*@
+@model ServiceReqAllUsrInfo
+@{
+    ViewData["Title"] = "DetailsAll";
+}
+
+<div class="col-md-12">
+    <a class="btn btn-primary f_right" asp-action="Index" asp-controller="ServReq"><i class="fa fa-hand-o-left"></i> Back</a><br /><br />
+
+    <table class="table table-bordered">
+
+        @foreach (var Servdt in Model.users)
+        {
+            <div>
+                <label>Name:</label>
+                <span>@Servdt.FirstName @Servdt.LastName @Servdt.MiddleName</span>
+            </div>
+            <div>
+                <label>Email:</label>
+                <span>@Servdt.Email</span>
+            </div>
+            <div>
+                <label>Phone Number:</label>
+                <span>@Servdt.WorkPhone</span>
+            </div>
+            <div>
+                <label>Address</label>
+                <span>
+                    <span>@Servdt.Address1 , @Servdt.Address2 ,</span><br />
+                    <span>@Servdt.Address3, @Servdt.City, </span><br />
+                    <span>@Servdt.State, @Servdt.Country,</span><br />
+                    <span>@Servdt.Zip</span>
+                </span>
+            </div>
+        }
+    </table>
+    <table class="table table-bordered" style="width: 50%">
+
+        <tr style="background-color: #72a540;color: white;"> <th>Service Request Details</th><th></th></tr>
+        @foreach (var Servdt in Model.serviceRequests)
+        {
+            <tr>
+                <th class="active">Service Request Id</th>
+                <td>@Servdt.ServiceRequestId</td>
+            </tr>
+            <tr>
+                <th class="active">Customer Id</th>
+                <td>@Servdt.custumerDetails.Name</td>
+            </tr>
+            <tr>
+                <th class="active">Service Type Id</th>
+                <td>@Servdt.ServiceTypeDetails.Name</td>
+            </tr>
+            <tr>
+                <th class="active">Created Date</th>
+                <td>@Servdt.CreatedDate</td>
+            </tr>
+            @*<tr>
+                    <th class="active">Created By</th>
+                    <td>@Servdt.UsersDetails.FirstName</td>
+                </tr>*@
+            <tr>
+                <th class="active">Assigned To</th>
+                <td>@Servdt.AssignedTo</td>
+            </tr>
+            <tr>
+                <th class="active">Assigned By</th>
+                <td>@Servdt.AssignedBy</td>
+            </tr>
+            <tr>
+                <th class="active">Assigned Date</th>
+                <td>@Servdt.AssignedDate</td>
+            </tr>
+            <tr>
+                <th class="active">Status</th>
+                <td>@Servdt.Status</td>
+            </tr>
+            <tr>
+                <th class="active">Notes</th>
+                <td>@Servdt.Notes</td>
+            </tr>
+            @*<a asp-action="Create" asp-controller="ServReq" class="btn btn-primary" asp-route-id="@Servdt.ServiceRequestId">Assign Technician</a>*@
+            <br />
+            <br />
+        }
+
+    </table>
+    <table class="table table-bordered" style="width: 80%">
+
+        <tr style="background-color: #72a540;color: white;">
+            <th>Service Request Details Id</th>
+            <th>Created Date</th>
+            <th>Previous Status </th>
+            <th>Current Status </th>
+            <th>Assigned To</th>
+            <th>Notes:</th>
+            
+        </tr>
+
+        @foreach (var Servdt in Model.serviceRequestDetails)
+        {
+            <tr>
+                <td>@Servdt.ServiceRequestDetailId</td>
+                <td>@Servdt.CreatedDate</td>
+                <td>@Servdt.PreviousStatus</td>
+                <td>@Servdt.CurrentStatus</td>
+                <td>@Servdt.VendorDetails.FirstName"</td>
+                <td>@Servdt.Notes"</td>
+            </tr>
+        }
+
+    </table>
+</div>
+

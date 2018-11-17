@@ -1,0 +1,121 @@
+﻿@model UpdateSingleUsrDetails
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="content">
+    <div class="container-fluid my_board">
+        <div class="col-md-12">
+            <div class="whitebox">
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <form method="post" asp-antiforgery="true">
+                            <div>
+                                <label asp-for="user.FirstName"> First Name: </label>
+                                <input asp-for="user.FirstName" class="form-control" />
+                                <span asp-validation-for="user.FirstName"></span>
+                            </div>
+                            <div>
+                                <label asp-for="user.LastName"> Last Name: </label>
+                                <input asp-for="user.LastName" class="form-control" />
+                                <span asp-validation-for="user.LastName"></span>
+                            </div>
+                            <div>
+                                <label asp-for="user.MiddleName"> Middle Name: </label>
+                                <input asp-for="user.MiddleName" class="form-control" />
+                                <span asp-validation-for="user.MiddleName"></span>
+                            </div>
+                            <div>
+                                <label asp-for="user.Email"> Email: </label>
+                                <input asp-for="user.Email" class="form-control" />
+                                <span asp-validation-for="user.Email"></span>
+                            </div>
+                            @*<div class="form-group">
+                                <label asp-for="UserRoleId">User Role</label>
+                                <select asp-for="UserRoleId" asp-items="(SelectList)ViewBag.Name" class="form-control"><option value="">-- Choose User Role --</option></select>
+                                <span asp-validation-for="UserRoleId"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CustomerId">Customer Name</label>
+                                <select asp-for="CustomerId" asp-items="(SelectList)ViewBag.CustomName" class="form-control"><option value="">-- Choose Customer --</option></select>
+                                <span asp-validation-for="CustomerId"></span>
+                            </div>*@
+                            <div>
+                                <label asp-for="user.WorkPhone">Work Phone Number: </label>
+                                <input asp-for="user.WorkPhone" class="form-control" />
+                                <span asp-validation-for="user.WorkPhone"></span>
+                            </div>
+                            <div>
+                                <label asp-for="user.MobilePhone">Mobile Phone Number: </label>
+                                <input asp-for="user.MobilePhone" class="form-control" />
+                                <span asp-validation-for="user.MobilePhone"></span>
+                            </div>
+                            <div>
+                                <label asp-for="user.HomePhone">Home Phone Number: </label>
+                                <input asp-for="user.HomePhone" class="form-control" />
+                                <span asp-validation-for="user.HomePhone"></span>
+                            </div>
+                            <div>
+                                <label asp-for="user.Address1">Address1: </label>
+                                <input asp-for="user.Address1" class="form-control" />
+                                <span asp-validation-for="user.Address1"></span>
+                            </div>
+                            <div>
+                                <label asp-for="user.Address2">Address2: </label>
+                                <input asp-for="user.Address2" class="form-control" />
+                                <span asp-validation-for="user.Address2"></span>
+                            </div>
+                            <div>
+                                <label asp-for="user.Address3">Address3: </label>
+                                <input asp-for="user.Address3" class="form-control" />
+                                <span asp-validation-for="user.Address3"></span>
+                            </div>
+                            <div>
+                                <label asp-for="user.City">City: </label>
+                                <input asp-for="user.City" class="form-control" />
+                                <span asp-validation-for="user.City"></span>
+                            </div>
+                            <div>
+                                <label asp-for="user.State">State: </label>
+                                <input asp-for="user.State" class="form-control" />
+                                <span asp-validation-for="user.State"></span>
+                            </div>
+                            <div>
+                                <label asp-for="user.Country">Country: </label>
+                                <input asp-for="user.Country" class="form-control" />
+                                <span asp-validation-for="user.Country"></span>
+                            </div>
+                            <div>
+                                <label asp-for="user.Zip">Zipcode: </label>
+                                <input asp-for="user.Zip" class="form-control" />
+                                <span asp-validation-for="user.Zip"></span>
+                            </div>
+                            <div>
+                                <label asp-for="login.LoginName">Login Name:</label>
+                                <input asp-for="login.LoginName" class="form-control" />
+                                <span asp-validation-for="login.LoginName"></span>
+                            </div>
+                            <div>
+                                <label asp-for="login.Password">Password:</label>
+                                <input asp-for="login.Password" class="form-control" />
+                                <span asp-validation-for="login.Password"></span>
+                            </div>
+                            @*<div>
+            <label asp-for="ConfirmPassword">Confirm Password:</label>
+            <input asp-for="ConfirmPassword" class="form-control" />
+            <span asp-validation-for="ConfirmPassword"></span>
+        </div>*@   <br />
+                            <div>
+                                <input class="btn btn-primary" type="submit" value="Update User" />
+                                <a class="btn btn-primary" asp-action="Index" asp-controller="RegisterUser">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,39 @@
+﻿@model Customer
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+    <tr>
+        <td><p>@Model.Name</p></td>
+        <td><p>@Model.Email</p></td>
+        <td><p>@Model.PrimaryPhone</p></td>
+        <td><p>@Model.AlternatePhone</p></td>
+        <td><p>@Model.Address1</p></td>
+        <td><p>@Model.Address2</p></td>  
+        <td><p>@Model.Address3</p></td>    
+        <td><p>@Model.City</p></td>    
+        <td><p>@Model.State</p></td>
+        <td><p>@Model.Country</p></td>
+        <td><p>@Model.Zip</p></td>
+        <td>
+            <a asp-action="Edit" asp-controller="Customer" class="btn btn-primary" asp-route-id="@Model.CustomerId">Edit</a>
+        </td>
+        <td>
+            <a class="btn btn-primary" asp-action="Delete" asp-route-id="@Model.CustomerId">Delete</a>
+        </td>
+    </tr>

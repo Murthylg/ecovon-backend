@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "CustomerOrder";
+}
+@*@model IEnumerable<ServReqDetailsForUserModel>*@
+@model ServiceReqAllUsrInfo
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="col-md-12">
+    <a class="btn btn-primary f_right" asp-action="Index" asp-controller="ServReq"><i class="fa fa-hand-o-left"></i> Back</a><br /><br />
+    <table class="table table-bordered" style="width: 50%">
+
+        <tr style="background-color: #72a540;color: white;"> <th>Service Request Details</th><th></th></tr>
+        @*<tr class="active">
+            </tr>*@
+        @foreach (var Servdt in Model.serviceRequests)
+        {
+            <tr>
+                <th class="active">Service Request Id</th>
+                <td>@Servdt.ServiceRequestId</td>
+            </tr>
+            <tr>
+                <th class="active">Customer Id</th>
+                <td>@Servdt.custumerDetails.Name</td>
+            </tr>
+            <tr>
+                <th class="active">Service Type Id</th>
+                <td>@Servdt.ServiceTypeDetails.Name</td>
+            </tr>
+            <tr>
+                <th class="active">Created Date</th>
+                <td>@Servdt.CreatedDate</td>
+            </tr>
+            @*<tr>
+                    <th class="active">Created By</th>
+                    <td>@Servdt.UsersDetails.FirstName</td>
+                </tr>*@
+            <tr>
+                <th class="active">Assigned To</th>
+                <td>@Servdt.AssignedTo</td>
+            </tr>
+            <tr>
+                <th class="active">Assigned By</th>
+                <td>@Servdt.AssignedBy</td>
+            </tr>
+            <tr>
+                <th class="active">Assigned Date</th>
+                <td>@Servdt.AssignedDate</td>
+            </tr>
+            <tr>
+                <th class="active">Status</th>
+                <td>@Servdt.Status</td>
+            </tr>
+            <tr>
+                <th class="active">Notes</th>
+                <td>@Servdt.Notes</td>
+            </tr>
+            <a asp-action="Create" asp-controller="ServReq" class="btn btn-primary" asp-route-id="@Servdt.ServiceRequestId">Assign Technician</a>
+            <br />
+            <br />
+        }
+
+    </table>
+</div>
+
+

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="col-md-4">
+            <a asp-action="Index" asp-controller="Customer" class="logo"><img src="~/logo/logo.png" class="img-responsive" width="100px" height="100px" /></a>
+        </div>
+        <div class="col-md-8">
+            <nav class="navbar navbar-default p-12 f_right">
+
+                <ul class="nav navbar-nav text-white">
+                    <li class="active dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-plus-square" aria-hidden="true"></i>
+                            <b>Create Customer</b> <i class="fa fa-angle-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="about-us">
+                            <li><a asp-action="Create" asp-controller="Customer">Create</a></li>
+                            <li><a asp-action="Index" asp-controller="Customer">Display</a></li>
+                        </ul>
+                    </li>
+                    <li class="active dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                            <b>Users</b> <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="about-us">
+                            <li><a asp-action="Create" asp-controller="RegisterUser">Create</a></li>
+                            <li><a asp-action="Index" asp-controller="RegisterUser">Display</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a asp-action="Index" asp-controller="ServReq">
+                            <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                            <b>Service Request</b>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                            <b>Vendors</b> <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="about-us">
+                            <li><a asp-action="Create" asp-controller="Vendor">Create</a></li>
+                            <li><a asp-action="Index" asp-controller="Vendor">Display</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <div class="col-md-12" style="position:fixed;bottom:0px">
+        <div style="border:3px solid #649641"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/node_modules/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="/node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/js/dashboard.js"></script>
+    <script src="~/js/jquery.sticky-kit.min.js"></script>
+    <script src="~/js/SmoothScroll.min.js"></script>
+</body>
+</html>

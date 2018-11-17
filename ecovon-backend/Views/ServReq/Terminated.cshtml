@@ -1,0 +1,58 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<ServiceRequest>
+@{
+    ViewData["Title"] = "Terminated";
+}
+
+@*<form method="get" class="form-inline">
+        <input name="filter" class="form-control" placeholder="filter"
+               value="@Model.RouteValue["Filter"]" />
+        <button type="submit" class="btn btn-info">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
+        </button>
+    </form>*@
+<a asp-action="Index" asp-controller="ServReq" class="btn btn-primary">All Requests <span class="badge badge-danger">@ViewBag.TotalReqs</span></a>
+<a asp-action="Pending" asp-controller="ServReq" class="btn btn-primary">Pending Requests <span class="badge badge-danger">@ViewBag.TotalPendingReqs</span></a>
+<a asp-action="Assigned" asp-controller="ServReq" class="btn btn-primary">Assigned Requests <span class="badge badge-danger">@ViewBag.TotalAssignedReqs</span></a>
+<a asp-action="Hold" asp-controller="ServReq" class="btn btn-primary">Hold Requests <span class="badge badge-danger">@ViewBag.TotalHoldReqs</span></a>
+<a asp-action="Terminated" asp-controller="ServReq" class="btn btn-primary">Terminated Requests <span class="badge badge-danger">@ViewBag.TotalTerminatedReqs</span></a>
+<a asp-action="Success" asp-controller="ServReq" class="btn btn-primary">Success Requests <span class="badge badge-danger">@ViewBag.TotalSuccessReqs</span></a>
+<div class="col-md-12">
+    <nav aria-label="Suppliers navigation example " class="right">
+        @Html.Partial("SmallPager", this.Model)
+    </nav>
+    <table class="table table-bordered">
+        <tr class="active">
+            <th>@Html.SortableHeaderFor(Model => Model.ServiceRequestId)</th>
+            <th>@Html.SortableHeaderFor(Model => Model.CustomerId)</th>
+            <th>@Html.SortableHeaderFor(Model => Model.ServiceTypeId)</th>
+            <th>@Html.SortableHeaderFor(Model => Model.CreatedDate)</th>
+            <th>@Html.SortableHeaderFor(Model => Model.CreatedBy)</th>
+            <th>@Html.SortableHeaderFor(Model => Model.AssignedTo)</th>
+            <th>@Html.SortableHeaderFor(Model => Model.AssignedBy)</th>
+            <th>@Html.SortableHeaderFor(Model => Model.AssignedDate)</th>
+            <th>@Html.SortableHeaderFor(Model => Model.Status)</th>
+            <th>@Html.SortableHeaderFor(Model => Model.Notes)</th>
+            <th>Details</th>
+        </tr>
+        @foreach (var Servdt in Model)
+        {
+            <tr>
+                <td>@Servdt.ServiceRequestId</td>
+                <td>@Servdt.custumerDetails.Name</td>
+                <td>@Servdt.ServiceTypeDetails.Name</td>
+                <td>@Servdt.CreatedDate</td>
+                <td>@Servdt.CreatedBy</td>
+                <td>@Servdt.AssignedTo</td>
+                <td>@Servdt.AssignedBy</td>
+                <td>@Servdt.AssignedDate</td>
+                <td>@Servdt.Status</td>
+                <td>@Servdt.Notes</td>
+                <td><a asp-action="DetailsAll" asp-controller="ServReq" class="btn btn-primary" asp-route-id="@Servdt.ServiceRequestId">Get Details</a></td>
+            </tr>
+        }
+    </table>
+    <nav aria-label="Suppliers navigation example " class="right">
+        @Html.Partial("SmallPager", this.Model)
+    </nav>
+</div>
+
